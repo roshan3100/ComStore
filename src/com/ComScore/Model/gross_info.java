@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -20,7 +21,7 @@ public class gross_info {
 	int day_gross_nr;
 	
 	@OneToOne(cascade= CascadeType.ALL)
-	@Column(name="week_id")
+	@JoinColumn(name="week_id")
 	week_info week_info;
 	
 	@Column(name="system_day_nr")

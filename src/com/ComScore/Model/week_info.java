@@ -1,3 +1,4 @@
+
 package com.ComScore.Model;
 
 import java.util.Date;
@@ -22,7 +23,7 @@ public class week_info {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="week_id")
+	@JoinColumn(name="week_id")
 	private int week_id;
 	
 	@Column(name="weeks_in_release")
@@ -76,6 +77,14 @@ public class week_info {
 	public week_info() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public gross_info getGross_info() {
+		return gross_info;
+	}
+
+	public void setGross_info(gross_info gross_info) {
+		this.gross_info = gross_info;
 	}
 
 	public Comscore getComscore() {

@@ -1,18 +1,26 @@
 package com.ComScore.Service;
 
+import java.util.List;
+
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ComScore.Dao.ComScoreDao;
 import com.ComScore.Model.Comscore;
-import com.ComScore.XMLPojo.Srg_Report;
 
+@Service
 public class ComScoreServiceImpl implements ComScoreService {
-	
-	private Comscore comscore;
 
+	@Autowired
+	private ComScoreDao comscoredao;
 	@Override
-	public Comscore save(Srg_Report srg_report) {
-		
-		
-		
-		return comscore;
+	@Transactional
+	public void save(List<Comscore> comscore) {
+
+			comscoredao.savecomscore(comscore);
+
 	}
 
 }
