@@ -29,11 +29,13 @@ public class XmlToObject {
 		
      try {  
    
-        File file = new File("G:\\WorkSpace\\ComScore\\WBtestSRG.xml");  
+        File file = new File("D:\\Workspace\\ComScore\\WBtestSRG.xml");  
         JAXBContext jaxbContext = JAXBContext.newInstance(Srg_Report.class);  
    
         Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();  
         Srg_Report srg_report= (Srg_Report) jaxbUnmarshaller.unmarshal(file); 
+        
+     //   System.out.println(srg_report.getTitle().get(0).getGrosses().getFriday_gross().getGross());
         
         comscore=modeldb.modeldb(srg_report);
         comscoreservice.save(comscore);
