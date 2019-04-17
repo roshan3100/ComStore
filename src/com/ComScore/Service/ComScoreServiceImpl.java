@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.ComScore.Dao.ComScoreDao;
 import com.ComScore.Model.ComScoreDB;
 import com.ComScore.Model.Comscore;
+import com.ComScore.Util.FrontDB;
 
 @Service
 public class ComScoreServiceImpl implements ComScoreService {
@@ -17,7 +18,8 @@ public class ComScoreServiceImpl implements ComScoreService {
 	@Autowired
 	private ComScoreDao comscoredao;
 	
-	private ComScoreDB comscoredb;
+	private FrontDB frontdb;
+	private List<ComScoreDB> comscoredb;
 	
 	@Override
 	@Transactional
@@ -29,9 +31,10 @@ public class ComScoreServiceImpl implements ComScoreService {
 	
 	@Override
 	@Transactional
-	public ComScoreDB getcomscore()
+	public List<ComScoreDB> getcomscoredb()
 	{
-		
+		List<Comscore> comscore =comscoredao.getComscore();
+		comscoredb = frontdb.getcomscoredb(comscore);
 		return comscoredb;
 	}
 

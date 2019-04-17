@@ -8,8 +8,8 @@ public class ComScoreDB {
 	private String Dist;
 	private Date Release_Date;
 	private Date Gross_Date;
-	private double Reported_Gross;
-	private double Reported_Locs;
+	private int Reported_Gross;
+	private int Reported_Locs;
 	public ComScoreDB() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -38,16 +38,16 @@ public class ComScoreDB {
 	public void setGross_Date(Date gross_Date) {
 		Gross_Date = gross_Date;
 	}
-	public double getReported_Gross() {
+	public int getReported_Gross() {
 		return Reported_Gross;
 	}
-	public void setReported_Gross(double reported_Gross) {
+	public void setReported_Gross(int reported_Gross) {
 		Reported_Gross = reported_Gross;
 	}
-	public double getReported_Locs() {
+	public int getReported_Locs() {
 		return Reported_Locs;
 	}
-	public void setReported_Locs(double reported_Locs) {
+	public void setReported_Locs(int reported_Locs) {
 		Reported_Locs = reported_Locs;
 	}
 	

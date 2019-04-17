@@ -1,6 +1,7 @@
 package com.ComScore.Util;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -12,12 +13,10 @@ import com.ComScore.XMLPojo.Title;
 
 public class ModelDB {
 
-	public List<Comscore> modeldb(Srg_Report srg_report) 
+	public List<Comscore> modeldb(Srg_Report srg_report) throws Exception
 	{
 		System.out.println("Roshan");
-		List<Comscore> comscore = null;
-		
-		try {
+		List<Comscore> comscore =new ArrayList<Comscore>() ;
 
 			Date creation_date=new SimpleDateFormat("dd/MM/yyyy").parse(srg_report.getCreation_date());
 //	Date reported_date=new SimpleDateFormat("dd/MM/yyyy").parse(srg_report.getReport_date());
@@ -81,12 +80,6 @@ public class ModelDB {
 				
 				comscore.add(cms);
 			}	
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			System.out.println("Catch");
-			e.printStackTrace();
-		}
 		return comscore;
 	}
 
