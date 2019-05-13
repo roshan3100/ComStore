@@ -5,15 +5,18 @@ import com.ComScore.Model.Comscore;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.ComScore.Model.ComScoreDB;
 
+@Component
 public class FrontDB {
 	
 	List<ComScoreDB> comscoredb = new ArrayList<ComScoreDB>();
 	
 	public List<ComScoreDB> getcomscoredb(List<Comscore> comscore)
 	{
-		
+		System.out.println("Roshan");
 		for(Comscore cms :comscore)
 		{
 			ComScoreDB coms =new ComScoreDB();

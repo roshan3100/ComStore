@@ -18,6 +18,7 @@ public class ComScoreServiceImpl implements ComScoreService {
 	@Autowired
 	private ComScoreDao comscoredao;
 	
+	@Autowired
 	private FrontDB frontdb;
 	private List<ComScoreDB> comscoredb;
 	
